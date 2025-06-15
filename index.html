@@ -4,6 +4,32 @@
   <meta charset="UTF-8">
   <title>Aavik's CS Final</title>
   <style>
+    img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.trip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.trip-card {
+  background: #f8fbff;
+  padding: 15px;
+  border-radius: 10px;
+  border-left: 4px solid #00bfff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.trip-card:hover {
+  background-color: #e6f5ff;
+}
+    
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
@@ -124,87 +150,107 @@
     <button onclick="showTab('trips')">Trips</button>
   </nav>
 
-  <section id="about" class="active">
-    <div class="card">
-      <h2>About Me</h2>
-      <p>Hi, I'm <strong>Aavik</strong>. I moved from Jersey City and now live in Scotch Plains. I have one brother and I'm currently a student at <strong>Scotch Plains-Fanwood High School</strong>. Before that, I went to <strong>Terrill Middle School</strong>.</p>
-      <div class="expandable" onclick="toggleText('moreAbout')">➕ Click to learn more...</div>
-      <div id="moreAbout" class="hidden-text">
-        <p>I love computers, sports, and spending time with my friends. I’m passionate about coding and technology. I enjoy challenges, whether it’s on the field or in school. My favorite subjects are Computer Science and Math. I'm also learning how to be a better public speaker and leader.</p>
-      </div>
+<section id="about" class="active">
+  <div class="card">
+    <h2>About Me</h2>
+    <img src="https://images.unsplash.com/photo-1603415526960-f8f6f3b6f70f" alt="Portrait-style photo" />
+    <p>Hi, I'm <strong>Aavik</strong>. I moved from Jersey City and now live in Scotch Plains. I have one brother and I'm currently a student at <strong>Scotch Plains-Fanwood High School</strong>. Before that, I went to <strong>Terrill Middle School</strong>.</p>
+    <div class="expandable" onclick="toggleText('moreAbout')">Click to learn more...</div>
+    <div id="moreAbout" class="hidden-text">
+      <p>I enjoy learning new things, hanging out with friends, and challenging myself with school and sports.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="sports">
-    <div class="card">
-      <h2>Sports</h2>
-      <p>I play <strong>soccer</strong> for <strong>STA</strong> (Soccer Training Academy). I also participate in <strong>lacrosse</strong> and <strong>track</strong> at my high school.</p>
-      <div class="expandable" onclick="toggleText('moreSports')">⚽ Show my favorite moments</div>
-      <div id="moreSports" class="hidden-text">
-        <ul>
-          <li>Scoring a winning goal in a STA tournament</li>
-          <li>Finishing strong in a track meet</li>
-          <li>Helping my lacrosse team in tight games</li>
-        </ul>
-      </div>
+ <section id="sports">
+  <div class="card">
+    <h2>Sports</h2>
+    <img src="https://images.unsplash.com/photo-1608202003122-3a5657cd1c71" alt="Soccer game" />
+    <p>I play <strong>soccer</strong> for <strong>STA</strong> (Soccer Training Academy). I also participate in <strong>lacrosse</strong> and <strong>track</strong> at my high school.</p>
+    <div class="expandable" onclick="toggleText('moreSports')">Show my favorite moments →</div>
+    <div id="moreSports" class="hidden-text">
+      <ul>
+        <li>Scoring a winning goal in a STA tournament</li>
+        <li>Finishing strong in a track meet</li>
+        <li>Helping my lacrosse team in tight games</li>
+      </ul>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="family">
-    <div class="card">
-      <h2>My Family</h2>
-      <p>I have one awesome brother and a wonderful family. We also have relatives in <strong>India</strong>, and we love visiting them when we can.</p>
-      <div class="expandable" onclick="toggleText('moreFamily')">👨‍👩‍👦 Click to see why family is important to me</div>
-      <div id="moreFamily" class="hidden-text">
-        <p>Family gives me support, strength, and fun memories. My trips to India have helped me understand my roots and culture. We always celebrate holidays together, and I love the food, laughter, and stories shared during those times.</p>
-      </div>
+ <section id="family">
+  <div class="card">
+    <h2>My Family</h2>
+    <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659" alt="Happy family photo" />
+    <p>I have one awesome brother and a wonderful family. We also have relatives in <strong>India</strong>, and we love visiting them when we can.</p>
+    <div class="expandable" onclick="toggleText('moreFamily')">Click to see why family is important to me</div>
+    <div id="moreFamily" class="hidden-text">
+      <p>Family gives me support, strength, and fun memories. My trips to India have helped me understand my roots and culture.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="trips">
+ <section id="trips">
   <div class="card">
     <h2>My Trips</h2>
     <p>I've been lucky to travel to some amazing places. Here are a few of my favorite destinations. Click each one to see what I did!</p>
     
     <div class="trip-grid">
-      <div class="trip-card" onclick="toggleText('tripIndia')">🇮🇳 India</div>
-      <div class="hidden-text" id="tripIndia">
-        <p>I visit India almost every other year to see a lot of family. I celebrated my grandpa’s birthday there, played cricket with my cousins, and enjoyed learning about my heritage.</p>
+      <div>
+        <div class="trip-card" onclick="toggleText('tripIndia')">🇮🇳 India</div>
+        <img src="https://images.unsplash.com/photo-1573166364780-4ed1927f6f1d" alt="India street" />
+        <div class="hidden-text" id="tripIndia">
+          <p>I visit India almost every other year to see a lot of family. I celebrated my grandpa’s birthday there, played cricket with my cousins, and enjoyed learning about my heritage.</p>
+        </div>
       </div>
 
-      <div class="trip-card" onclick="toggleText('tripDubai')">🇦🇪 Dubai</div>
-      <div class="hidden-text" id="tripDubai">
-        <p>In Dubai, I went to the top of the world’s tallest building, the Burj Khalifa. I also went ATV riding across the desert—it was thrilling!</p>
+      <div>
+        <div class="trip-card" onclick="toggleText('tripDubai')">🇦🇪 Dubai</div>
+        <img src="https://images.unsplash.com/photo-1586449484634-f7ef066ee93a" alt="Dubai skyline and Burj Khalifa" />
+        <div class="hidden-text" id="tripDubai">
+          <p>In Dubai, I went to the top of the world’s tallest building, the Burj Khalifa. I also went ATV riding across the desert—it was thrilling!</p>
+        </div>
       </div>
 
-      <div class="trip-card" onclick="toggleText('tripMexico')">🇲🇽 Mexico</div>
-      <div class="hidden-text" id="tripMexico">
-        <p>I visited Cancun with my family, where I swam with dolphins, zip-lined through the jungle, and swam in a cenote. It was an unforgettable adventure.</p>
+      <div>
+        <div class="trip-card" onclick="toggleText('tripMexico')">🇲🇽 Mexico</div>
+        <img src="https://images.unsplash.com/photo-1587595431973-160d0d92e51b" alt="Cancun beach" />
+        <div class="hidden-text" id="tripMexico">
+          <p>I visited Cancun with my family, where I swam with dolphins, zip-lined through the jungle, and swam in a cenote. It was an unforgettable adventure.</p>
+        </div>
       </div>
 
-      <div class="trip-card" onclick="toggleText('tripCostaRica')">🇨🇷 Costa Rica</div>
-      <div class="hidden-text" id="tripCostaRica">
-        <p>In Costa Rica, I explored volcanoes and beautiful landscapes. I also rode dirt bikes through the forests and saw amazing wildlife.</p>
+      <div>
+        <div class="trip-card" onclick="toggleText('tripCostaRica')">🇨🇷 Costa Rica</div>
+        <img src="https://images.unsplash.com/photo-1596126353782-5f2a5f84fcce" alt="Costa Rica rainforest" />
+        <div class="hidden-text" id="tripCostaRica">
+          <p>In Costa Rica, I explored volcanoes and beautiful landscapes. I also rode dirt bikes through the forests and saw amazing wildlife.</p>
+        </div>
       </div>
 
-      <div class="trip-card" onclick="toggleText('tripFlorida')">🇺🇸 Florida</div>
-      <div class="hidden-text" id="tripFlorida">
-        <p>I’ve been to Florida multiple times for soccer tournaments. I had a lot of fun competing and hanging out with my teammates at the hotel and beach.</p>
+      <div>
+        <div class="trip-card" onclick="toggleText('tripFlorida')">🇺🇸 Florida</div>
+        <img src="https://images.unsplash.com/photo-1572536085550-4862a06e55ae" alt="Florida soccer field" />
+        <div class="hidden-text" id="tripFlorida">
+          <p>I’ve been to Florida multiple times for soccer tournaments. I had a lot of fun competing and hanging out with my teammates at the hotel and beach.</p>
+        </div>
       </div>
 
-      <div class="trip-card" onclick="toggleText('tripEngland')">🇬🇧 England</div>
-      <div class="hidden-text" id="tripEngland">
-        <p>In England, I watched professional soccer games, explored the historic city streets, and dined at famous restaurants. It was one of my favorite trips.</p>
+      <div>
+        <div class="trip-card" onclick="toggleText('tripEngland')">🇬🇧 England</div>
+        <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0" alt="London city view" />
+        <div class="hidden-text" id="tripEngland">
+          <p>In England, I watched professional soccer games, explored the historic city streets, and dined at famous restaurants. It was one of my favorite trips.</p>
+        </div>
       </div>
     </div>
-    
+
     <div class="expandable" onclick="toggleText('tripStory')">🌍 Want to know my favorite trip?</div>
     <div id="tripStory" class="hidden-text">
       <p>My favorite trip was to Costa Rica. The nature was beautiful, and I got to zipline through the forest! The beaches were awesome, and I even saw monkeys and toucans up close.</p>
     </div>
   </div>
 </section>
-
   <script>
     function showTab(tabId) {
       const sections = document.querySelectorAll('section');
