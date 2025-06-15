@@ -3,92 +3,113 @@
 <head>
   <meta charset="UTF-8">
   <title>Aavik's CS Final</title>
-<style>
-  body {
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    background: linear-gradient(to right, #f0f8ff, #e6f2ff);
-    color: #333;
-  }
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: linear-gradient(to right, #f0f8ff, #e6f2ff);
+      color: #333;
+    }
 
-  header {
-    background: linear-gradient(to right, #007acc, #00bfff);
-    color: white;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
+    header {
+      background: linear-gradient(to right, #007acc, #00bfff);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
 
-  nav {
-    display: flex;
-    justify-content: center;
-    background: #005f99;
-  }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #005f99;
+      flex-wrap: wrap;
+    }
 
-  nav button {
-    background: none;
-    border: none;
-    color: white;
-    padding: 15px 25px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background 0.3s, transform 0.2s;
-  }
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      padding: 15px 25px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s, transform 0.2s;
+    }
 
-  nav button:hover {
-    background-color: #007acc;
-    transform: scale(1.05);
-  }
+    nav button:hover {
+      background-color: #007acc;
+      transform: scale(1.05);
+    }
 
-  section {
-    display: none;
-    padding: 30px 20px;
-    animation: fadeIn 0.5s ease-in;
-  }
+    section {
+      display: none;
+      padding: 30px 20px;
+      animation: fadeIn 0.5s ease-in;
+    }
 
-  section.active {
-    display: block;
-  }
+    section.active {
+      display: block;
+    }
 
-  .card {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    margin: 20px auto;
-    max-width: 700px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    border-left: 6px solid #007acc;
-  }
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      margin: 20px auto;
+      max-width: 700px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border-left: 6px solid #007acc;
+    }
 
-  .card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-  }
+    .card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    }
 
-  .expandable {
-    cursor: pointer;
-    color: #007acc;
-    margin-top: 15px;
-    font-weight: bold;
-  }
+    .expandable {
+      cursor: pointer;
+      color: #007acc;
+      margin-top: 15px;
+      font-weight: bold;
+    }
 
-  .expandable:hover {
-    text-decoration: underline;
-  }
+    .expandable:hover {
+      text-decoration: underline;
+    }
 
-  .hidden-text {
-    display: none;
-    margin-top: 10px;
-    color: #444;
-  }
+    .hidden-text {
+      display: none;
+      margin-top: 10px;
+      color: #444;
+    }
 
-  @keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-  }
-</style>
+    .trip-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      padding: 10px;
+    }
 
+    .trip-card {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .trip-card:hover {
+      transform: translateY(-5px);
+      background: #e6f2ff;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+  </style>
 </head>
 <body>
 
@@ -100,15 +121,16 @@
     <button onclick="showTab('about')">About Me</button>
     <button onclick="showTab('sports')">Sports</button>
     <button onclick="showTab('family')">Family</button>
+    <button onclick="showTab('trips')">Trips</button>
   </nav>
 
   <section id="about" class="active">
     <div class="card">
       <h2>About Me</h2>
       <p>Hi, I'm <strong>Aavik</strong>. I moved from Jersey City and now live in Scotch Plains. I have one brother and I'm currently a student at <strong>Scotch Plains-Fanwood High School</strong>. Before that, I went to <strong>Terrill Middle School</strong>.</p>
-      <div class="expandable" onclick="toggleText('moreAbout')">Click to learn more...</div>
+      <div class="expandable" onclick="toggleText('moreAbout')">➕ Click to learn more...</div>
       <div id="moreAbout" class="hidden-text">
-        <p>I enjoy learning new things, hanging out with friends, and challenging myself with school and sports.</p>
+        <p>I love computers, sports, and spending time with my friends. I’m passionate about coding and technology. I enjoy challenges, whether it’s on the field or in school. My favorite subjects are Computer Science and Math. I'm also learning how to be a better public speaker and leader.</p>
       </div>
     </div>
   </section>
@@ -117,7 +139,7 @@
     <div class="card">
       <h2>Sports</h2>
       <p>I play <strong>soccer</strong> for <strong>STA</strong> (Soccer Training Academy). I also participate in <strong>lacrosse</strong> and <strong>track</strong> at my high school.</p>
-      <div class="expandable" onclick="toggleText('moreSports')">Show my favorite moments →</div>
+      <div class="expandable" onclick="toggleText('moreSports')">⚽ Show my favorite moments</div>
       <div id="moreSports" class="hidden-text">
         <ul>
           <li>Scoring a winning goal in a STA tournament</li>
@@ -132,9 +154,28 @@
     <div class="card">
       <h2>My Family</h2>
       <p>I have one awesome brother and a wonderful family. We also have relatives in <strong>India</strong>, and we love visiting them when we can.</p>
-      <div class="expandable" onclick="toggleText('moreFamily')">Click to see why family is important to me</div>
+      <div class="expandable" onclick="toggleText('moreFamily')">👨‍👩‍👦 Click to see why family is important to me</div>
       <div id="moreFamily" class="hidden-text">
-        <p>Family gives me support, strength, and fun memories. My trips to India have helped me understand my roots and culture.</p>
+        <p>Family gives me support, strength, and fun memories. My trips to India have helped me understand my roots and culture. We always celebrate holidays together, and I love the food, laughter, and stories shared during those times.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="trips">
+    <div class="card">
+      <h2>My Trips</h2>
+      <p>I've been lucky to travel to some amazing places. Here are a few of my favorite destinations:</p>
+      <div class="trip-grid">
+        <div class="trip-card">🇮🇳 India</div>
+        <div class="trip-card">🇦🇪 Dubai</div>
+        <div class="trip-card">🇲🇽 Mexico</div>
+        <div class="trip-card">🇨🇷 Costa Rica</div>
+        <div class="trip-card">🇺🇸 Florida</div>
+        <div class="trip-card">🇬🇧 England</div>
+      </div>
+      <div class="expandable" onclick="toggleText('tripStory')">🌍 Want to know my favorite trip?</div>
+      <div id="tripStory" class="hidden-text">
+        <p>My favorite trip was to Costa Rica. The nature was beautiful, and I got to zipline through the forest! The beaches were awesome, and I even saw monkeys and toucans up close.</p>
       </div>
     </div>
   </section>
@@ -154,3 +195,4 @@
 
 </body>
 </html>
+
